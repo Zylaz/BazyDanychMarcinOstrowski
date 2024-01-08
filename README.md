@@ -1,14 +1,14 @@
 Znajduje się tutaj opis drugiej pracy domowej wykonanej na przedmiot Bazy Danych w semestrze zimowym 2023/2024.
 
 # Baza Danych
-Umieściłem tutaj, zgodnie ze wskazaniami z polecenia, skrypt tworzący bazę danych, kolejne skrypty będące rozwiązaniami kolejnych poleceń oraz backup bazy danych. Sama baza danych składa się z siedmiu tabel
-- Clients - tabela zawierająca informacje o klientach,
-- Adresses - adresy klientów,
-- Orders - zamówienia klientów,
-- OrderDetails - szczegóły zamówień,
-- PaymentHistory - historia płatności danego klienta,
-- Products - produkty kupowane przez naszych klientów,
-- ProductDetails - szczegóły dotyczące produktów.
+Umieściłem tutaj, zgodnie ze wskazaniami z polecenia, skrypt tworzący bazę danych, kolejne skrypty będące rozwiązaniami kolejnych poleceń oraz backup bazy danych. Baza danych różni się od tej którą zrobiłem w poprzedniej pracy domowej, gdyż chciałem mieć trochę więcej swobody w rozwiązywaniu poleceń. Sama baza danych składa się z siedmiu tabel
+- Clients - tabela zawierająca informacje o klientach, klucz główny ClientID, kolumny: ClientID INT, FirstName NVARCHAR, LastName NVARCHAR, Budget MONEY, DataOfRegistration DATETIME, ADDITIONALINFORMATION NVARCHAR, 
+- Adresses - adresy klientów, klucz główny AdressID, klucz obcy ClientID, kolumny: AdressID INT, ClientID INT, Street NVARCHAR, City NVARCHAR, PostalCode NVARCHAR, 
+- Orders - zamówienia klientów, klucz główny OrderID, klucz obcy ClientID, kolumny: OrderID INT, ClientID INT, DataZamowienia DATETIMEOFFSET, Status NVARCHAR, 
+- OrderDetails - szczegóły zamówień, klucz główny DetailsID, klucze obce OrderID i ProductID, kolumny: DetailsID INT, OrderID INT, ClientID INT, Quantity INT, 
+- PaymentHistory - historia płatności danego klienta, klucz główny PaymentID, klucz obcy ClientID, kolumny: PaymentID INT, ClientID INT, PaymentDate DATETIMEOFFSET, Amount MONEY, 
+- Products - produkty kupowane przez naszych klientów, klucz główny ProductID, klucz obcy ProductDetailsID, kolumny: ProductID INT, ProductDetailsID INT, ProductName NVARCHAR, Cena MONEY, 
+- ProductDetails - szczegóły dotyczące produktów, klucz główny ProductDetailsID, kolumny: ProductDetailsID INT, DetailName NVARCHAR, 
 # Skrypty 
 ## create_database.sql
 Tworzy bazę danych ClientManagement o tabelach takich jak opisane powyżej. 
