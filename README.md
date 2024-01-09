@@ -1,7 +1,7 @@
 Znajduje się tutaj opis drugiej pracy domowej wykonanej na przedmiot Bazy Danych w semestrze zimowym 2023/2024.
 
 # Opis Bazy Danych
-Umieściłem tutaj, zgodnie ze wskazaniami z polecenia, skrypt tworzący bazę danych, kolejne skrypty będące rozwiązaniami kolejnych poleceń oraz backup bazy danych. Baza danych różni się od tej którą zrobiłem w poprzedniej pracy domowej, gdyż chciałem mieć trochę więcej swobody w rozwiązywaniu poleceń. Sama baza danych składa się z siedmiu tabel
+Umieściłem tutaj, zgodnie ze wskazaniami z polecenia, skrypt tworzący bazę danych, kolejne skrypty będące rozwiązaniami kolejnych poleceń oraz backup bazy danych. Baza danych różni się od tej którą zrobiłem w poprzedniej pracy domowej, gdyż chciałem mieć trochę więcej swobody w rozwiązywaniu poleceń. Dlatego też utworzyłem bazę od nowa, lecz główny koncept pozostał ten sam. Sama baza danych składa się z siedmiu tabel
 - Clients - tabela zawierająca informacje o klientach, klucz główny ClientID, kolumny: ClientID INT, FirstName NVARCHAR, LastName NVARCHAR, Budget MONEY, DataOfRegistration DATETIME, ADDITIONALINFORMATION NVARCHAR, 
 - Adresses - adresy klientów, klucz główny AdressID, klucz obcy ClientID, kolumny: AdressID INT, ClientID INT, Street NVARCHAR, City NVARCHAR, PostalCode NVARCHAR, 
 - Orders - zamówienia klientów, klucz główny OrderID, klucz obcy ClientID, kolumny: OrderID INT, ClientID INT, DataZamowienia DATETIMEOFFSET, Status NVARCHAR, 
